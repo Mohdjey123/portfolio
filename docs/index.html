@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="vanta-container"></div>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+
+    <!-- Vertical Menu -->
+    <div class="menu" id="menu">
+        <a href="#about" data-target="about-section">About Me</a>
+        <a href="#projects" data-target="projects-section">Projects</a>
+        <a href="#contact" data-target="contact-section">Contact</a>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content-section" id="about-section">
+        <h2>About Me</h2>
+        <p>This is the About Me section.</p>
+    </div>
+
+    <div class="content-section" id="projects-section">
+        <h2>Projects</h2>
+        <ul id="repo-list"></ul>
+    </div>
+
+    <div class="content-section" id="contact-section">
+        <h2>Contact</h2>
+        <p>This is the Contact section.</p>
+    </div>
+
+
+    <!-- Include dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.halo.min.js"></script>
+
+    <!-- Link to external script.js file -->
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
