@@ -1,5 +1,6 @@
 /* Body and HTML settings */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -165,7 +166,7 @@ body, html {
     content: "";
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 1px;
     background: #00aaff;
     bottom: 0;
     left: 0;
@@ -362,9 +363,11 @@ body, html {
     opacity: 1;
     transform: translateX(0);
 }
+
 .hidden {
     display: none;
 }
+
 .active {
     display: block;
 }
@@ -380,7 +383,7 @@ body, html {
     top: 40px;
 }
 
-.language-button:hover + .language-dropdown,
+.language-button:hover+.language-dropdown,
 .language-dropdown:hover {
     display: block;
 }
