@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Interactive Resume</title>
+    <title>Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -25,8 +30,80 @@
     <!-- Content Sections -->
     <div class="content-section" id="about-section">
         <h2>About Me</h2>
-        <p>This is the About Me section.</p>
+        <div class="language-menu">
+            <button class="language-button">Language</button>
+            <div class="language-dropdown">
+                <a href="#" data-language="english">English</a>
+                <a href="#" data-language="arabic">Arabic</a>
+                <a href="#" data-language="somali">Somali</a>
+            </div>
+        </div>
+
+        <!-- English Version -->
+        <div class="about-me" id="story-english">
+            <p class="about-line">
+                I was born in <span class="highlight">Riyadh, Saudi Arabia</span>, but spent most of my childhood in
+                <span class="highlight">Jeddah</span>.
+            </p>
+            <p class="about-line">
+                At <span class="highlight">17 years old</span>, I moved to <span class="highlight">Canada</span> and
+                finished high school here.
+            </p>
+            <p class="about-line">
+                I initially studied <span class="highlight">Civil Engineering</span> at <span class="highlight">Toronto
+                    Metropolitan University</span>, but after realizing it wasn’t for me, I found my passion in <span
+                    class="highlight">computer studies</span> at <span class="highlight">Seneca College</span>.
+            </p>
+            <p class="about-line">
+                I speak <span class="highlight">three languages</span>: <span class="highlight">Arabic</span>, <span
+                    class="highlight">Somali</span>, and <span class="highlight">English</span>.
+            </p>
+        </div>
+
+        <!-- Arabic Version -->
+        <div class="about-me" id="story-arabic" style="display: none;">
+            <p class="about-line">
+                وُلدت في <span class="highlight">الرياض، المملكة العربية السعودية</span>، لكنني قضيت معظم طفولتي في
+                <span class="highlight">جدة</span>.
+            </p>
+            <p class="about-line">
+                عندما كان عمري <span class="highlight">17 عامًا</span>، انتقلت إلى <span class="highlight">كندا</span>
+                وأكملت دراستي الثانوية هناك.
+            </p>
+            <p class="about-line">
+                درست في البداية <span class="highlight">الهندسة المدنية</span> في <span class="highlight">جامعة تورونتو
+                    متروبوليتان</span>، ولكن بعد أن أدركت أنها ليست شغفي، وجدت شغفي في <span class="highlight">دراسة
+                    الكمبيوتر</span> في <span class="highlight">كلية سينيكا</span>.
+            </p>
+            <p class="about-line">
+                أتحدث <span class="highlight">ثلاث لغات</span>: <span class="highlight">العربية</span>، <span
+                    class="highlight">الصومالية</span> و<span class="highlight">الإنجليزية</span>.
+            </p>
+        </div>
+
+        <!-- Somali Version -->
+        <div class="about-me" id="story-somali" style="display: none;">
+            <p class="about-line">
+                Waxaan ku dhashay <span class="highlight">Riyaad, Sacuudiga</span>, laakiin inta badan caruurnimadayda
+                waxaan ku soo qaatay <span class="highlight">Jiddah</span>.
+            </p>
+            <p class="about-line">
+                Markii aan jiray <span class="highlight">17 sano</span>, waxaan u guuray <span
+                    class="highlight">Kanada</span> halkaasna waxaan ku dhammaystay dugsiga sare.
+            </p>
+            <p class="about-line">
+                Markii hore waxaan bartay <span class="highlight">Injineerinka Madaniga ah</span> ee <span
+                    class="highlight">Jaamacadda Toronto Metropolitan</span>, laakiin markaan ogaaday inaysan ahayn waxa
+                aan jeclahay, waxaan helay xiisahayga <span class="highlight">cilmiga kombuyuutarka</span> ee <span
+                    class="highlight">Seneca College</span>.
+            </p>
+            <p class="about-line">
+                Waxaan ku hadlaa <span class="highlight">saddex luqadood</span>: <span class="highlight">Carabi</span> ,
+                <span class="highlight">Soomaali</span> iyo <span class="highlight">Ingiriisi</span>.
+            </p>
+        </div>
     </div>
+
 
     <div class="content-section" id="projects-section">
         <h2>Projects</h2>

@@ -1,10 +1,11 @@
 /* Body and HTML settings */
-body,
-html {
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: "Zilla Slab", serif;
+    font-weight: 500;
+    font-style: normal;
     overflow: hidden;
 }
 
@@ -104,19 +105,293 @@ html {
 #projects-section ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  #projects-section li {
+}
+
+#projects-section li {
     margin: 10px 0;
-  }
-  
-  #projects-section li a {
+}
+
+#projects-section li a {
     color: #00aaff;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  #projects-section li a:hover {
+}
+
+#projects-section li a:hover {
     text-decoration: underline;
-  }
-  
+}
+
+/* Language menu and buttons */
+.language-menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.language-button {
+    padding: 10px 20px;
+    background-color: #00aaff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.language-button:hover {
+    background-color: #0088cc;
+}
+
+.about-me {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.about-line {
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: slideIn 1s ease-in forwards;
+}
+
+.highlight {
+    color: #00aaff;
+    font-weight: bold;
+    position: relative;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #00aaff;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.highlight:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        font-size: 25px;
+    }
+
+    .menu {
+        width: 200px;
+        left: -200px;
+    }
+
+    .menu.open {
+        left: 0;
+    }
+
+    .content-section {
+        left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .language-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .about-me {
+        font-size: 16px;
+    }
+
+    .highlight {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu {
+        width: 150px;
+        left: -150px;
+    }
+
+    .menu.open {
+        left: 0;
+    }
+
+    .content-section {
+        left: 150px;
+        width: calc(100% - 150px);
+    }
+
+    .menu-icon {
+        font-size: 20px;
+    }
+
+    .menu a {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    .about-me {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .language-button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .highlight {
+        font-size: 14px;
+    }
+}
+
+/* Language Menu Container */
+.language-menu {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Language Button */
+.language-button {
+    padding: 12px 24px;
+    background-color: #00aaff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-button:hover {
+    background-color: #0088cc;
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+}
+
+/* Dropdown Submenu */
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    text-align: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 10px 16px;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #00aaff;
+    color: white;
+}
+
+/* Display dropdown on hover */
+.language-menu:hover .language-dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for dropdown items */
+.language-dropdown a {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.language-dropdown a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.language-dropdown a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.language-dropdown a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.language-menu:hover .language-dropdown a {
+    opacity: 1;
+    transform: translateX(0);
+}
+.hidden {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    top: 40px;
+}
+
+.language-button:hover + .language-dropdown,
+.language-dropdown:hover {
+    display: block;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.language-dropdown a:hover {
+    background-color: #f1f1f1;
+}
