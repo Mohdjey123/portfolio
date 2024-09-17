@@ -68,7 +68,7 @@
             </p>
             <p class="about-line">
                 عندما كان عمري <span class="highlight">17 عامًا</span>، انتقلت إلى <span class="highlight">كندا</span>
-               وأكملت دراستي الثانوية هناك
+                وأكملت دراستي الثانوية هناك
             </p>
             <p class="about-line">
                 درست في البداية <span class="highlight">الهندسة المدنية</span> في <span class="highlight">جامعة تورونتو
@@ -111,8 +111,22 @@
     </div>
 
     <div class="content-section" id="contact-section">
-        <h2>Contact</h2>
-        <p>This is the Contact section.</p>
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send</button>
+        </form>
     </div>
 
 
