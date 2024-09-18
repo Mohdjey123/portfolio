@@ -111,4 +111,3 @@ document.querySelectorAll('.language-dropdown a').forEach(item => {
       }
   });
 });
-
