@@ -59,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Set the initial section to show (e.g., About Me)
+    const initialSection = document.getElementById('about-section');
+    if (initialSection) {
+        initialSection.classList.add('active');
+        initialSection.classList.remove('hidden');
+    }
+
     // Fetch and display GitHub repositories in the Projects section
     fetchGitHubRepos();
 });
