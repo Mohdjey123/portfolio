@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
             targetSection.classList.add('active');
             targetSection.classList.remove('hidden');
 
+            // Smooth scroll to target section
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+
             // Close the menu
             menu.classList.remove('open');
         });
@@ -82,7 +85,12 @@ function fetchGitHubRepos() {
 
     // Fetch repositories using GitHub API
     fetch(`https://api.github.com/users/${username}/repos`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(repos => {
             repos.forEach(repo => {
                 // Create a list item for each repository
@@ -92,29 +100,32 @@ function fetchGitHubRepos() {
                 repoList.appendChild(repoItem);
             });
         })
-        .catch(error => console.error('Error fetching repositories:', error));
+        .catch(error => {
+            console.error('Error fetching repositories:', error);
+            repoList.innerHTML = '<li>Error loading repositories.</li>';
+        });
 }
 
 // Handle the language switching
 document.querySelectorAll('.language-dropdown a').forEach(item => {
-  item.addEventListener('click', function(e) {
-      e.preventDefault();
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
 
-      // Get the selected language from the data attribute
-      const selectedLanguage = this.getAttribute('data-language');
+        // Get the selected language from the data attribute
+        const selectedLanguage = this.getAttribute('data-language');
 
-      // Hide all language versions
-      document.getElementById('story-english').style.display = 'none';
-      document.getElementById('story-arabic').style.display = 'none';
-      document.getElementById('story-somali').style.display = 'none';
+        // Hide all language versions
+        document.getElementById('story-english').style.display = 'none';
+        document.getElementById('story-arabic').style.display = 'none';
+        document.getElementById('story-somali').style.display = 'none';
 
-      // Show the selected language version
-      if (selectedLanguage === 'english') {
-          document.getElementById('story-english').style.display = 'block';
-      } else if (selectedLanguage === 'arabic') {
-          document.getElementById('story-arabic').style.display = 'block';
-      } else if (selectedLanguage === 'somali') {
-          document.getElementById('story-somali').style.display = 'block';
-      }
-  });
+        // Show the selected language version
+        if (selectedLanguage === 'english') {
+            document.getElementById('story-english').style.display = 'block';
+        } else if (selectedLanguage === 'arabic') {
+            document.getElementById('story-arabic').style.display = 'block';
+        } else if (selectedLanguage === 'somali') {
+            document.getElementById('story-somali').style.display = 'block';
+        }
+    });
 });
