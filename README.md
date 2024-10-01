@@ -1,3 +1,3 @@
-# resume
+# Portfolio
 
- https://mohdjey123.github.io/resume/
+ https://mohdjey123.github.io/portfolio/
